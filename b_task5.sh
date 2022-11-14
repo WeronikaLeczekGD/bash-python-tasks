@@ -14,10 +14,9 @@ if [ -f $4 ]; then
         exit 1
 fi
 
-if [[ $5 == "-v" ]]; then
-        tr -s '[:upper:]' '[:lower:]' < $2 > $4
-        tr -s '[:lower:]' '[:upper:]' < $4 > $2
-        exit 0
+if [ -f $5 ]; then
+        echo "Invalid input"
+        exit 1
 fi
 
 if [[ $5 == "-s" ]]; then
@@ -34,7 +33,6 @@ if [[ $5 == "-l" ]]; then
         tr '[:upper:]' '[:lower:]' < $2 > $4
         exit 0
 fi
- if -u tag is passed
 
 if [[ $5 == "-u" ]]; then
         tr '[:lower:]' '[:upper:]' < $2 > $4
@@ -49,4 +47,32 @@ fi
 if [ $# -gt 5 ]; then
         echo "Invalid syntax. Please use -i <input file> -o <output file> tags"
         exit 1
+fi
+
+
+# flag -v working using functions
+function lowercase_to_uppercase() {
+
+    tr '[:lower:]' '[:upper:]'
+
+}
+
+function uppercase_to_lowercase() {
+
+    tr '[:upper:]' '[:lower:]'
+
+}
+
+if [ $5 == "-v" ];
+then
+
+if [[ $1 == "-i" ]] && [[ $3 == "-o" ]] && [[ $5 == "-v" ]] && [[ $(cat $2 | tr '[:upper:]' '[:lower:]') == $(cat $2) ]]; then
+
+    cat $2 | lowercase_to_uppercase > $4
+    else
+        cat $2 | uppercase_to_lowercase > $4
+fi
+
+else
+    echo "Invalid input"
 fi
