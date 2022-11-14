@@ -1,9 +1,9 @@
 import sys
 
-def get_extension(pytest):
+def get_extension(filename):
     
     try:
-        extension = pytest.split(".")[1]
+        extension = filename.split(".")[1]
         print(extension)
     except IndexError:
         print("No extension found")
