@@ -1,6 +1,4 @@
-
 import sys
-
 
 def get_extension(pytest):
     
@@ -13,4 +11,4 @@ def get_extension(pytest):
     except:
         print("Unexpected error:", sys.exc_info()[0])
     
-get_extension("p_task.txt")
+get_extension("extension.txt")
